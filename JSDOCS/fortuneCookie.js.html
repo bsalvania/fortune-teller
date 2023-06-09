@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source: fortuneCookie.js</title><!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="",baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body class="dark" data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="Rcoo_C49ro7CbykarSzX8"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#disableButton">disableButton</a></div><div class="sidebar-section-children"><a href="global.html#enableButton">enableButton</a></div><div class="sidebar-section-children"><a href="global.html#fortunes">fortunes</a></div><div class="sidebar-section-children"><a href="global.html#getRandomFortune">getRandomFortune</a></div><div class="sidebar-section-children"><a href="global.html#handleFortune">handleFortune</a></div><div class="sidebar-section-children"><a href="global.html#populateVoiceList">populateVoiceList</a></div><div class="sidebar-section-children"><a href="global.html#showFortune">showFortune</a></div><div class="sidebar-section-children"><a href="global.html#speakFortune">speakFortune</a></div><div class="sidebar-section-children"><a href="global.html#stopRotation">stopRotation</a></div><div class="sidebar-section-children"><a href="global.html#synth">synth</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">fortuneCookie.js</h1></header><article><pre class="prettyprint source lang-js"><code>/**
+ * Array of general, college, and collage-romance type fortunes
+ */
+const fortunes = [
+  "Your future is bright, embrace it with open arms.",
+  "A wonderful surprise is coming your way.",
+  "Believe in yourself and you will achieve great things.",
+  "Your kindness will lead to good fortune.",
+  "The journey may be difficult, but the destination is worth it.",
+  "Your talents will soon be recognized and rewarded.",
+  "Don't be afraid to take a chance, it may lead to great things.",
+  "Your hard work and perseverance will pay off in the end.",
+  "Keep an open mind and you will find new opportunities.",
+  "Your positivity and optimism will bring you success.",
+  "You will soon experience a life-changing event.",
+  "Your creativity and imagination will bring you great success.",
+  "The best things in life are yet to come.",
+  "You will soon receive unexpected blessings.",
+  "A new friendship will bring you great happiness.",
+  "Your future is full of endless possibilities.",
+  "Good things come to those who work hard and never give up.",
+  "Let go of the past and embrace a bright future.",
+  "Your perseverance will lead to victory.",
+  "Your ability to adapt to change will bring you great success.",
+  "Your determination and hard work will pay off in the long run.",
+  "The journey may be tough, but the reward will be worth it.",
+  "Trust in your intuition and you will make the right decisions.",
+  "A new opportunity is on the horizon, seize it.",
+  "Your courage and confidence will bring you great success.",
+  "Your future is filled with abundance and prosperity.",
+  "Your greatest treasure is the love and support of those around you.",
+  "Your creativity will bring you great success in all areas of life.",
+  "Embrace change and you will find success and happiness.",
+  "Your positive attitude will bring you good luck and fortune.",
+  "Embrace the challenges that college brings, for they are the stepping stones to your future success.", // College
+  "Your college journey is like a blank canvas. Paint it with knowledge, experiences, and friendships that will last a lifetime.",
+  "In the halls of higher education, discover your true passions and let them guide you towards a fulfilling career.",
+  "Success in college is not just about grades; it's about the wisdom gained from both victories and failures.",
+  "The key to acing exams is not just studying hard but also finding the right balance between work and play.",
+  "Embrace diversity in college, for it is through understanding others that you will broaden your own horizons.",
+  "In college, you are the author of your own story. Make every chapter count and create a narrative that inspires others.",
+  "Don't be afraid to step out of your comfort zone in college. Growth happens when you challenge yourself.",
+  "Believe in your abilities, trust the process, and remember that you are capable of achieving great things in college and beyond.",
+  "Every setback in college is an opportunity for growth. Keep pushing forward, and you will emerge stronger than ever.",
+  "Success is not a destination but a journey. Enjoy the ride, make meaningful connections, and cherish every moment of your college years.",
+  "Remember, the true value of education lies not just in the knowledge gained but in the person you become.",
+  "Make the most of every networking opportunity in college. You never know where a connection can lead you.",
+  "In the face of challenges, remember that perseverance and resilience are the keys to unlocking your full potential.",
+  "College is the perfect time to explore your passions. Don't be afraid to pursue what truly sets your soul on fire.",
+  "Stay curious, stay hungry for knowledge. College is your chance to quench your thirst for learning.",
+  "Celebrate your achievements in college, big and small. They are the milestones that mark your personal growth.",
+  "Don't compare your college journey to others'. Stay focused on your own goals and pave your unique path to success.",
+  "Seek guidance when you need it, for mentors can offer invaluable wisdom that will shape your college experience.",
+  "Trust yourself and your abilities. You have the power to turn your college dreams into a reality.",
+  "Opportunities are like puzzle pieces; in college, you'll find the right ones to shape your future.",
+  "The friendships you forge in college will be your lifelong treasures. Nurture them with care.",
+  "In the realm of higher education, passion and dedication are the keys that unlock doors to boundless possibilities.",
+  "Embrace the unknown in college, for it is in the unfamiliar that you'll discover your true potential.",
+  "Remember, failure is not the end but a stepping stone on the path to greatness. Learn from it, rise above it.",
+  "In the realm of college, seize every chance to expand your horizons, for knowledge knows no bounds.",
+  "Your college experience is a mosaic of moments. Collect each one with gratitude and make a masterpiece.",
+  "The pursuit of education is a marathon, not a sprint. Pace yourself, stay determined, and finish strong.",
+  "In college, each class is a brushstroke, and your mind is the canvas. Paint a masterpiece of knowledge.",
+  "The walls of a college campus hold countless stories. Leave your own mark and become a part of its legacy.",
+  "Be fearless in pursuing your dreams in college. The world needs your unique talents and perspectives.",
+  "Remember, in college, failure is not falling down; it's staying down. Rise each time with renewed determination.",
+  "In college, challenges may test your limits, but they also reveal the strength and resilience within you.",
+  "Every lecture is an opportunity to expand your mind. Pay attention, ask questions, and embrace the power of knowledge.",
+  "Success in college is not solely measured by grades but by the growth and transformation you undergo along the way.",
+  "Take time to nourish your mind, body, and soul in college. Self-care is essential for a balanced and fulfilling journey.",
+  "As you navigate the college maze, trust your instincts and follow the path that aligns with your passions.",
+  "In college, make connections that transcend the classroom. Forge bonds that will support and inspire you throughout your life.",
+  "Every setback in college is an opportunity to learn, adapt, and come back stronger. Keep pushing forward!",
+  "Remember, in college, you have the power to shape your own narrative. Write a story that reflects your true potential.",
+  "Embrace diversity in college, for it enriches your understanding of the world and fosters compassion and empathy.",
+  "As you climb the mountain of knowledge in college, enjoy the breathtaking view of the discoveries you make along the way.",
+  "Celebrate the small victories in college. Each step forward, no matter how small, brings you closer to your goals.",
+  "In college, seek mentors who inspire and challenge you. Their guidance can ignite the spark that propels you towards greatness.",
+  "Let curiosity be your guiding light in college. Embrace the joy of learning and explore new realms of knowledge.",
+  "College is a time of self-discovery. Embrace the journey of finding who you truly are and embrace your authentic self.",
+  "Remember, in college, success is not a destination; it's a mindset. Embrace a growth mindset and watch your potential soar.",
+  "In college, each essay is an opportunity to articulate your thoughts and ideas. Let your voice shine and make an impact.",
+  "Dare to dream big in college. Your aspirations have the power to shape the world and leave a lasting legacy.",
+  "As you embark on your college adventure, remember that every day is a chance to grow, learn, and redefine what's possible.",
+  "Love may find you in the most unexpected places, even in the lecture hall or library. Keep your heart open.", // Romance
+  "In the realm of college, sparks of attraction can ignite friendships that blossom into beautiful love stories.",
+  "A study partner today may become a soulmate tomorrow. Let academic connections pave the way for lasting romance.",
+  "Love is like a research project, requiring patience, dedication, and the willingness to explore new depths.",
+  "In college, love knows no boundaries. Embrace the diversity of connections and let your heart guide you.",
+  "A campus stroll hand-in-hand can lead to memories that will warm your heart long after graduation.",
+  "Don't be afraid to let love distract you momentarily. Sometimes the best lessons are learned in the embrace of another.",
+  "The late-night conversations shared with someone special can deepen your connection and create unforgettable bonds.",
+  "In the whirlwind of college, love can be a guiding light, reminding you of the importance of both emotional and intellectual connections.",
+  "Just as knowledge grows, so can love. Nurture it with care, and watch it blossom into something extraordinary.",
+  "Remember, relationships in college are a delicate dance. Communicate, compromise, and cherish the magic of love.",
+  "The chemistry you share with someone special can be more electrifying than any scientific experiment.",
+  "In the realm of college romance, take risks, be vulnerable, and discover the magic of love's transformative power.",
+  "As you explore your passions in college, you may find that love is the most captivating subject of all.",
+  "Cherish the stolen moments with your college sweetheart, for they will become precious memories that last a lifetime.",
+  "Love is the ultimate inspiration. Let the love you find in college ignite your creativity and fuel your dreams.",
+  "In the sea of possibilities, love can be the anchor that grounds you and gives your college journey meaning.",
+  "True love sees no boundaries. Embrace cultural diversity in college and let love bridge the gaps.",
+  "The late-night study sessions can turn into whispers of love, as the line between friendship and romance blurs.",
+  "In college, love may be a detour from your original plans, but it can lead to a destination more beautiful than you ever imagined.",
+  "The right person can be your biggest cheerleader in college, supporting you in both your academic and personal pursuits.",
+  "Love is a dance, and college is the perfect stage to find a partner who moves to the rhythm of your heart.",
+  "A love letter written on a textbook page can hold more magic than any words penned in a fairy tale.",
+  "In college, love can be a refuge in the storm. Find solace in the arms of someone who understands your journey.",
+  "A smile from someone special can brighten even the gloomiest of college days. Let love be your sunshine.",
+  "Love has a way of finding you when you least expect it. Stay open-hearted, and let destiny work its magic.",
+  "In the journey of love, don't be afraid to rewrite the script. Create a love story in college that is uniquely yours.",
+  "The echoes of laughter shared with a loved one in college will reverberate in your heart for a lifetime.",
+  "Love can be a sanctuary in the whirlwind of college life. Find comfort and strength in the arms of your beloved.",
+  "In the hustle and bustle of college, love can be a calming melody that brings peace to your soul.",
+  "The path to love in college may not always be smooth, but with patience and understanding, it can lead to a love story for the ages.",
+  "The campus may be vast, but love has a way of bringing two hearts together, no matter the distance.",
+  "In college, love is an adventure waiting to unfold. Embrace the journey and let your heart guide you to incredible destinations.",
+  "The love you find in college can shape not only your present but also your future. Choose your love wisely, for it can inspire you to greatness.",
+];
+
+let previousFortune = "";
+const fortuneButton = document.getElementById("fortune-button");
+const fortuneText = document.getElementById("fortune-text");
+const fortuneAudioCrack = document.getElementById("fortune-crack");
+const voiceToggle = document.getElementById("voice-toggle-checkbox");
+
+/**
+ * This function will get a random fortune from the fortune array and make sure it does not match the previous one
+ * @returns {string} a random fortune
+ */
+function getRandomFortune() {
+  let randomIndex = Math.floor(Math.random() * fortunes.length);
+  let fortune = fortunes[randomIndex];
+
+  // Generate a new random fortune if it matches the previous fortune
+  while (fortune === previousFortune) {
+    randomIndex = Math.floor(Math.random() * fortunes.length);
+    fortune = fortunes[randomIndex];
+  }
+
+  previousFortune = fortune;
+  return fortune;
+}
+
+/**
+ * Displays the fortune and if voice toggle is checked, reads out the fortune
+ */
+function showFortune() {
+  const fortune = getRandomFortune();
+  fortuneText.textContent = fortune;
+  fortuneText.style.display = "block";
+  if (voiceToggle.checked) {
+    speakFortune(fortune);
+  } else {
+    setTimeout(enableButton, 1000);
+  }
+}
+
+/**
+ * Reads out the fortune using speech synthesis
+ * @param {string} fortune What the fortune to be read out is
+ */
+function speakFortune(fortune) {
+  const speech = new SpeechSynthesisUtterance(fortune);
+  const option = voiceSelect.selectedOptions[0].getAttribute("data-name");
+  for (let i = 0; i &lt; voices.length; i++) {
+    if (voices[i].name == option) speech.voice = voices[i];
+  }
+  speech.lang = "en-US";
+  speech.rate = 0.8;
+  speech.pitch = 1.2;
+  window.speechSynthesis.speak(speech);
+
+  // Reenable button when fortune is done being read
+  speech.addEventListener("end", () => {
+    enableButton();
+  });
+}
+
+/**
+ * Disables button so user cannot click it
+ */
+function disableButton() {
+  fortuneButton.disabled = true;
+  fortuneButton.style.opacity = "0.5";
+}
+
+/**
+ * Enables button so user can click it
+ */
+function enableButton() {
+  fortuneButton.disabled = false;
+  fortuneButton.style.opacity = "1";
+}
+
+/**
+ * When the user clicks the button, disables it so they cannot click the button 
+ * in quick succession and cause audio issues
+ */
+fortuneButton.addEventListener("click", function () {
+  fortuneAudioCrack.play();
+  disableButton();
+  setTimeout(showFortune, 1000);
+});
+
+/**
+ * Added options for different voices using voice synthesis
+ */
+const synth = window.speechSynthesis;
+
+// const inputForm = document.querySelector("form");
+// const inputTxt = document.querySelector(".txt");
+const voiceSelect = document.querySelector("select");
+// const pitch = document.querySelector("#pitch");
+// const pitchValue = document.querySelector(".pitch-value");
+// const rate = document.querySelector("#rate");
+// const rateValue = document.querySelector(".rate-value");
+
+let voices = [];
+
+/**
+ * Speech synthesis API
+ */
+function populateVoiceList() {
+  voices = synth.getVoices();
+
+  for (let i = 0; i &lt; voices.length; i++) {
+    const option = document.createElement("option");
+    option.textContent = `${voices[i].name} (${voices[i].lang})`;
+
+    if (voices[i].default) {
+      option.textContent += " — DEFAULT";
+    }
+
+    option.setAttribute("data-lang", voices[i].lang);
+    option.setAttribute("data-name", voices[i].name);
+    voiceSelect.appendChild(option);
+  }
+}
+
+populateVoiceList();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="Rcoo_C49ro7CbykarSzX8"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#disableButton">disableButton</a></div><div class="sidebar-section-children"><a href="global.html#enableButton">enableButton</a></div><div class="sidebar-section-children"><a href="global.html#fortunes">fortunes</a></div><div class="sidebar-section-children"><a href="global.html#getRandomFortune">getRandomFortune</a></div><div class="sidebar-section-children"><a href="global.html#handleFortune">handleFortune</a></div><div class="sidebar-section-children"><a href="global.html#populateVoiceList">populateVoiceList</a></div><div class="sidebar-section-children"><a href="global.html#showFortune">showFortune</a></div><div class="sidebar-section-children"><a href="global.html#speakFortune">speakFortune</a></div><div class="sidebar-section-children"><a href="global.html#stopRotation">stopRotation</a></div><div class="sidebar-section-children"><a href="global.html#synth">synth</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
