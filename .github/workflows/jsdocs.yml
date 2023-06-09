@@ -21,4 +21,4 @@ jobs:
           author_name: GitHub Actions
           author_email: noreply@github.com
           message: "Generated JSDocs"
-          add: "jsdocs/*"
+          add: "JSDOCS/*"
