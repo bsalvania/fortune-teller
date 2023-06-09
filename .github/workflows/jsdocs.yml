@@ -7,18 +7,20 @@ jobs:
   jsdocs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Build JSDOCS
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: ./assets/scripts
-          recurse: true
-          output_dir: ./JSDOCs
-      - name: Commit JSDOCS
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: GitHub Actions
-          author_email: noreply@github.com
-          message: "Generated JSDocs"
-          add: "JSDOCS/*"
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build JSDOCS
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ./assets/scripts
+        recurse: true
+        output_dir: ./JSDOCS
+        front_page: README.md
+        template: clean-jsdoc-theme
+    - name: Commit JSDOCS
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: GitHub Actions
+        author_email: noreply@github.com
+        message: 'Generated JSDocs'
+        add: 'JSDOCS/*'
