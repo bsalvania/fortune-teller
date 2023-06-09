@@ -14,4 +14,11 @@ jobs:
         with:
           source_dir: ./assets/scripts
           recurse: true
-          output_dir: ./JSDOCS
+          output_dir: ./JSDOCs
+      - name: Commit JSDOCS
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: noreply@github.com
+          message: "Generated JSDocs"
+          add: "jsdocs/*"
